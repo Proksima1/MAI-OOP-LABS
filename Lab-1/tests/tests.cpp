@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../include/main.h"
+#include "main.h"
 
 TEST(test_clear_number, basic_test_set) {
     int data = 123;
