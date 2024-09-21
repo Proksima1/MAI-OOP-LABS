@@ -2,15 +2,21 @@
 #include "../include/main.h"
 
 TEST(test_clear_number, basic_test_set) {
-    ASSERT_TRUE(checkClear(123) == true);
+    int data = 123;
+    bool result = checkClear(data);
+    ASSERT_TRUE(result);
 }
 
 TEST(test_unclear_number, basic_test_set) {
-    ASSERT_TRUE(checkClear(132) == false);
+    int data = 132;
+    bool result = !checkClear(data);
+    ASSERT_TRUE(result);
 }
 
 TEST(test_clear_number_with_equal_digits, basic_test_set) {
-    ASSERT_TRUE(checkClear(133) == false);
+    int data = 133;
+    bool result = checkClear(data);
+    ASSERT_TRUE(result);
 }
 
 

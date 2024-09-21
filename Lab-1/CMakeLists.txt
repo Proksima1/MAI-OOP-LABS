@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.28)
-project(oop)
+cmake_minimum_required(VERSION 3.22)
+project(oop CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -15,10 +15,9 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
-add_library(${CMAKE_PROJECT_NAME}_lib src/program/func.cpp)
-add_executable(${CMAKE_PROJECT_NAME}_exe src/main.cpp)
 
-target_link_libraries(${CMAKE_PROJECT_NAME}_exe PRIVATE ${CMAKE_PROJECT_NAME}_lib)
+add_executable(${CMAKE_PROJECT_NAME}_exe src/main.cpp src/program/utils.cpp)
+target_include_directories(${CMAKE_PROJECT_NAME}_exe PRIVATE include)
 
 
 enable_testing()
