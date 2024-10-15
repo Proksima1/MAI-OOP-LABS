@@ -6,9 +6,9 @@ int main() {
     int data;
     std::cin >> data;
     if (checkClear(data)) {
-        std::cout << "Clear number";
+        std::cout << "Clear number" << std::endl;
     } else {
-        std::cout << "Unclear number";
+        std::cout << "Unclear number" << std::endl;
     }
     return 1;
 }

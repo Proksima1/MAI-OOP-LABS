@@ -10,12 +10,12 @@ add_library(GTest::GTest INTERFACE IMPORTED)
 target_link_libraries(GTest::GTest INTERFACE gtest_main)
 
 
-add_executable(${CMAKE_PROJECT_NAME}_exe src/main.cpp src/program/utils.cpp)
+add_executable(${CMAKE_PROJECT_NAME}_exe src/main.cpp src/classes/binary.cpp)
 target_include_directories(${CMAKE_PROJECT_NAME}_exe PRIVATE include)
 
 
 enable_testing()
-add_executable(${CMAKE_PROJECT_NAME}_tests tests/tests.cpp src/program/utils.cpp)
+add_executable(${CMAKE_PROJECT_NAME}_tests tests/tests.cpp src/classes/binary.cpp)
 target_link_libraries(${CMAKE_PROJECT_NAME}_tests PRIVATE GTest::GTest)
 target_include_directories(${CMAKE_PROJECT_NAME}_tests PRIVATE include)
 
