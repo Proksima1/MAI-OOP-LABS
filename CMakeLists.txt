@@ -15,12 +15,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
-# Опции для выбора лабораторных работ
-option(BUILD_LAB1 "Build Lab 1" OFF)
 
-
-# Добавление подпроектов в зависимости от опций
-#if (BUILD_LAB1)
-    add_subdirectory(Lab-2)
-#endif ()
+add_subdirectory(Lab-1)
+add_subdirectory(Lab-2)
+add_subdirectory(Lab-3)
 

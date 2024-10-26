@@ -105,24 +105,24 @@ Binary &Binary::operator=(const Binary &right) {
 }
 
 Binary &Binary::operator+=(const Binary &other) {
-    int thisNumb = 0;
+    int thisNumber = 0;
     for (size_t i = 0; i < _size; ++i) {
-        thisNumb = (thisNumb << 1) | (_data[i] - '0');
+        thisNumber = (thisNumber << 1) | (_data[i] - '0');
     }
 
-    int otherNumb = 0;
+    int otherNumber = 0;
     for (size_t j = 0; j < other._size; ++j) {
-        otherNumb = (otherNumb << 1) | (other._data[j] - '0');
+        otherNumber = (otherNumber << 1) | (other._data[j] - '0');
     }
 
-    int sumNumb = thisNumb + otherNumb;
+    int sumNumber = thisNumber + otherNumber;
 
     size_t newSize = 0;
-    unsigned char *newData = new unsigned char[sizeof(sumNumb) * 8 + 1]{0};
+    unsigned char *newData = new unsigned char[sizeof(sumNumber) * 8 + 1]{0};
 
-    while (sumNumb > 0) {
-        newData[newSize++] = (sumNumb % 2) + '0';
-        sumNumb /= 2;
+    while (sumNumber > 0) {
+        newData[newSize++] = (sumNumber % 2) + '0';
+        sumNumber /= 2;
     }
 
     for (size_t i = 0; i < newSize / 2; ++i) {
