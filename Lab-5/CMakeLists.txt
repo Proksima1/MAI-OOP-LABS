@@ -10,17 +10,13 @@ add_library(GTest::GTest INTERFACE IMPORTED)
 target_link_libraries(GTest::GTest INTERFACE gtest_main)
 
 
-add_executable(${CMAKE_PROJECT_NAME}_exe src/main.cpp src/classes/triangle.cpp src/classes/figure.cpp
-        src/classes/array.cpp src/classes/rectangle.cpp src/classes/square.cpp)
+add_executable(${CMAKE_PROJECT_NAME}_exe src/main.cpp)
 target_include_directories(${CMAKE_PROJECT_NAME}_exe PRIVATE include)
-
 
 enable_testing()
 
-add_executable(${CMAKE_PROJECT_NAME}_tests tests/tests.cpp src/classes/triangle.cpp src/classes/figure.cpp
-        src/classes/rectangle.cpp src/classes/square.cpp src/classes/array.cpp)
-target_link_libraries(${CMAKE_PROJECT_NAME}_tests PRIVATE GTest::GTest)
+add_executable(${CMAKE_PROJECT_NAME}_tests tests/tests.cpp)
 target_include_directories(${CMAKE_PROJECT_NAME}_tests PRIVATE include)
-
+target_link_libraries(${CMAKE_PROJECT_NAME}_tests PRIVATE GTest::GTest)
 
 add_test(NAME ${CMAKE_PROJECT_NAME}_tests COMMAND ${CMAKE_PROJECT_NAME}_tests)
