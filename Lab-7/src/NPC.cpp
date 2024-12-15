@@ -74,7 +74,7 @@ bool NPC::canKill(const NPC &other) {
 NPC *NPCFactory::createNPC(const std::string &type, const std::string &name, int x, int y, int MAP_WIDTH,
                            int MAP_HEIGHT) {
     if (!((0 <= x && x <= MAP_WIDTH) || (0 <= y && y <= MAP_HEIGHT))) {
-        std::cout << "Position cannot be less 0 and bigger than 500" << std::endl;
+        std::cout << "Position cannot be less 0 and bigger than map size" << std::endl;
         return nullptr;
     }
     if (type == "Slaver") return new Slaver(name, x, y);
